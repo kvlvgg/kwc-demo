@@ -1,0 +1,96 @@
+@use "./auto-import.scss" as *;
+
+kwc-calendar.calendar.dark {
+  @include font-body-sm();
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 300px;
+
+  &::part(calendar-input-wrapper) {
+    height: 32px;
+    background-color: rgb(54, 54, 64);
+    border-radius: 8px;
+    padding: 0 8px;
+    color: #ffffff;
+  }
+
+  &::part(calendar-input) {
+    height: 32px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 8px;
+    color: #ffffff;
+  }
+
+  &::part(popup) {
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 8px;
+
+    background-color: rgb(54, 54, 64);
+  }
+
+  &::part(header-date) {
+    color: #03a9f4;
+  }
+
+  & [slot^="arrow"] {
+    color: #03a9f4;
+  }
+
+  &::part(arrow) {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    border: none;
+    color: #03a9f4;
+    background-color: transparent;
+
+    &:hover {
+      background-color: rgba(3, 169, 244, 0.24);
+    }
+  }
+
+  &::part(day-of-week) {
+    color: #ffffff;
+  }
+
+  &::part(date-button) {
+    @include font-body-sm();
+
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ffffff;
+
+    &:hover {
+      background-color: rgba(3, 169, 244, 0.24);
+    }
+  }
+
+  &::part(current-date-button) {
+    border: 2px solid #03a9f4;
+  }
+
+  &::part(selected-date-button) {
+    background-color: #03a9f4;
+    color: rgba(0, 0, 0, 0.87);
+
+    &:hover {
+      background-color: #03a9f4;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+
+  &::part(not-in-view-month-date-button) {
+    opacity: 0.5;
+  }
+
+  &::part(selected-date-button) {
+    opacity: 1;
+  }
+}
